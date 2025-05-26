@@ -1,0 +1,32 @@
+{"properties": [
+  {
+    "name": "jwt.public.key",
+    "type": "java.lang.String",
+    "description": "A description for 'jwt.public.key'"
+  },
+  {
+    "name": "app.security.oauth2.client-id",
+    "type": "java.lang.String",
+    "description": "A description for 'app.security.oauth2.client-id'"
+  },
+  {
+    "name": "auth-service.url",
+    "type": "java.lang.String",
+    "description": "A description for 'auth-service.url'"
+  },
+  {
+    "name": "user-info-service.url",
+    "type": "java.lang.String",
+    "description": "A description for 'user-info-service.url'"
+  },
+  {
+    "name": "app.cache.default-ttl",
+    "type": "java.lang.String",
+    "description": "A description for 'app.cache.default-ttl'"
+  },
+  {
+    "name": "app.cache.auth-service.user-roles.duration",
+    "type": "java.lang.String",
+    "description": "A description for 'app.cache.auth-service.user-roles.duration'"
+  }
+]}
