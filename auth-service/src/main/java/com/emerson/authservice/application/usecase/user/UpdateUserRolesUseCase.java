@@ -9,6 +9,12 @@ import com.emerson.authservice.application.gateways.UserRepositoryGateway;
 import com.emerson.authservice.domain.model.Role;
 import com.emerson.authservice.domain.model.User;
 
+/**
+ * Caso de uso responsável por atualizar as roles atribuídas a um usuário.
+ *
+ * <p>Recupera as roles existentes no banco de dados com base nos nomes informados,
+ * cria novas roles caso necessário e atualiza a lista de roles do usuário.</p>
+ */
 public class UpdateUserRolesUseCase {
 	
 	private final FindUserByIdUseCase findUserByIdUseCase;
@@ -25,6 +31,13 @@ public class UpdateUserRolesUseCase {
 		this.roleRepositoryGateway = roleRepositoryGateway;
 	}
 
+	/**
+	 * Executa a atualização de roles de um usuário.
+	 *
+	 * @param id    Identificador do usuário.
+	 * @param roles Lista de nomes de roles a serem atribuídas.
+	 * @return O usuário com as novas roles atualizadas.
+	 */
 	public User execute(String id, List<String> roles) {
 		User user = this.findUserByIdUseCase.execute(id);
 		

@@ -4,14 +4,17 @@ import java.util.List;
 import java.util.Optional;
 
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
 import com.emerson.authservice.domain.model.User;
 import com.emerson.authservice.infrastructure.persistence.entity.JpaUser;
 
 @Mapper(componentModel = "spring", uses = RoleMapper.class)
 public interface UserMapper {
-	
+
+    @Mapping(target = "rolesAsString", ignore = true)
     User toDomain(JpaUser jpaEntity);
+    
     List<User> toDomain(List<JpaUser> jpaEntities);
     
     JpaUser toJpa(User domainUser);

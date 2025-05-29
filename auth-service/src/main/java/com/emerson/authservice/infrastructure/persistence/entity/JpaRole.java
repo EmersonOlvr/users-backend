@@ -27,10 +27,5 @@ public class JpaRole extends UUIDEntity {
 	
 	@Column(nullable = false, unique = true)
 	private String name;
-	
-	public enum Values {
-		USER, 
-		ADMIN
-	}
 
 }
