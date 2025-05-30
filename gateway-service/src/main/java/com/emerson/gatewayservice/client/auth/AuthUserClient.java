@@ -16,6 +16,12 @@ import com.emerson.gatewayservice.client.auth.dto.UpdatePasswordRequest;
 import com.emerson.gatewayservice.client.auth.dto.UpdateRolesRequest;
 import com.emerson.gatewayservice.client.auth.dto.UpdateUsernameRequest;
 
+/**
+ * Esta interface define o cliente Feign responsável por interagir com os recursos de usuário
+ * do `auth-service`, no endpoint `/v1/user`.
+ *
+ * <p>Permite operações de CRUD e gerenciamento de credenciais e roles dos usuários autenticados.</p>
+ */
 @FeignClient(
 	name = "auth-service-user", 
 	url = "${auth-service.url}/v1/user"

@@ -8,6 +8,9 @@ import org.springframework.stereotype.Component;
 
 import com.emerson.gatewayservice.service.user.UpdateUserRolesInCacheUseCase;
 
+/**
+ * Componente responsável por escutar eventos Kafka relacionados ao gerenciamento de usuários.
+ */
 @Component
 public class UserEventListener {
 	
@@ -17,6 +20,14 @@ public class UserEventListener {
 		this.updateUserRolesInCacheUseCase = updateUserRolesInCacheUseCase;
 	}
 
+	/**
+	 * Listener Kafka que escuta o tópico {@code auth.user.roles.updated}.
+	 * 
+	 * <p>Extrai o ID do usuário e a nova lista de roles da mensagem, 
+	 * e executa a atualização das roles no cache.</p>
+	 *
+	 * @param message mensagem contendo os dados no formato {@code { "userId": "...", "roles": [...] }}
+	 */
 	@KafkaListener(topics = "auth.user.roles.updated", groupId = "gateway-group")
 	public void listenUserRolesUpdated(Map<String, Object> message) {
 		String userId = (String) message.get("userId");
