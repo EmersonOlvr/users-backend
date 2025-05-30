@@ -20,16 +20,16 @@ public class CreateUserUseCase {
 		this.userRepositoryGateway = userRepositoryGateway;
 	}
 
-    /**
-     * Executa a criação de um novo usuário.
-     * 
-     * @param id identificador único do usuário.
-     * @param fullName nome completo do usuário.
-     * @param cpf CPF do usuário.
-     * @return o novo {@link User} criado e persistido.
-     * 
-     * @throws ConflictException se já existir um usuário com o mesmo ID ou CPF.
-     */
+	/**
+	 * Executa a criação de um novo usuário.
+	 * 
+	 * @param id       identificador único do usuário.
+	 * @param fullName nome completo do usuário.
+	 * @param cpf      CPF do usuário.
+	 * @return o novo {@link User} criado e persistido.
+	 * 
+	 * @throws ConflictException se já existir um usuário com o mesmo ID ou CPF.
+	 */
 	public User execute(String id, String fullName, String cpf) {
 		if (this.userRepositoryGateway.existsById(id))
 			throw new ConflictException("Já existe um usuário com o ID informado.");

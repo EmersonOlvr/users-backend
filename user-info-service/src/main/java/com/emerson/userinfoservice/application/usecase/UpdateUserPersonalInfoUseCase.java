@@ -19,9 +19,9 @@ public class UpdateUserPersonalInfoUseCase {
 	/**
 	 * Executa a atualização do nome completo e do CPF de um usuário.
 	 * 
-	 * @param id o identificador único do usuário.
+	 * @param id       o identificador único do usuário.
 	 * @param fullName o novo nome completo.
-	 * @param cpf o novo CPF.
+	 * @param cpf      o novo CPF.
 	 * @return o {@link User} com as informações atualizadas.
 	 */
 	public User execute(String id, String fullName, String cpf) {
